@@ -1,34 +1,67 @@
 <div class="dashboard-container">
-    
     <!-- Left: Add Item Form -->
     <div class="dashboard-section add-item-section">
-        <h3>Add New Item</h3>
-        <app-add-item (itemAdded)="addItem($event)"></app-add-item>
+      <!-- <h2>Add New Item</h2> -->
+      <app-add-item (itemAdded)="addItem($event)"></app-add-item>
     </div>
-
+  
     <!-- Right: Item List -->
     <div class="dashboard-section item-list-section">
-        <h3>Item List</h3>
-        <ul>
-            <li *ngFor="let item of items; let i = index">
-                <div [ngClass]="{'purchased-item': item.isPurchased}">
-                    <h4>{{ item.name }} - ₹{{ item.price }}</h4>
-                    <p>{{ item.description }}</p>
-
-                    <button *ngIf="!item.isPurchased" class="buy-btn" (click)="buyItem(i)">Buy</button>
-                    <button class="edit-btn" (click)="editItem(i)">Edit</button>
-                    <button class="delete-btn" (click)="deleteItem(i)">Delete</button>
-                </div>
-            </li>
-        </ul>
-
-        <!-- Logout Button -->
-        <button class="logout-btn" (click)="logout()">Logout</button>
+      <h3>Item List</h3>
+  
+      <!-- Search Bar -->
+      <input 
+        type="text" 
+        [(ngModel)]="searchTerm" 
+        placeholder="Search items..." 
+        class="search-bar"
+      />
+  
+      <!-- Sort Options -->
+      <div class="sort-buttons">
+        <button (click)="toggleSortOrder('name')">Sort by Name</button>
+        <button (click)="toggleSortOrder('price')">Sort by Price</button>
+      </div>
+  
+      <ul>
+        <li *ngFor="let item of filteredItems; let i = index">
+          <div [ngClass]="{ 'purchased-item': item.isPurchased }">
+            <h4>{{ item.name }} - ₹{{ item.price }}</h4>
+            <p>{{ item.description }}</p>
+  
+            <!-- Buy Button -->
+            <button
+            *ngIf="!item.isPurchased"
+            class="buy-btn"
+            (click)="buyItem(i)"
+          >
+            Buy
+          </button>
+  
+            <!-- Edit Button -->
+            <button class="edit-btn" (click)="editItem(i)">
+              Edit
+            </button>
+  
+            <!-- Delete Button -->
+            <button class="delete-btn" (click)="deleteItem(i)">
+              Delete
+            </button>
+          </div>
+        </li>
+      </ul>
+  
+      <!-- Logout Button -->
+      <button class="logout-btn" (click)="logout()">Logout</button>
     </div>
-
+  
     <!-- Edit Item Form -->
     <div class="dashboard-section edit-item-section" *ngIf="selectedItem">
-        <h3>Edit Item</h3>
-        <app-edit-item [item]="selectedItem" (updatedItem)="updateItem($event)"></app-edit-item>
+      <h3>Edit Item</h3>
+      <app-edit-item
+        [item]="selectedItem"
+        (updatedItem)="updateItem($event)"
+      ></app-edit-item>
     </div>
-</div>
+  </div>
+  

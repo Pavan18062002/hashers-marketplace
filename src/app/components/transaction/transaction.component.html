@@ -1,0 +1,15 @@
+<div class="transaction-container">
+    <div class="transaction-item">
+      <h3>Confirm Purchase</h3>
+  
+      <!-- Display item details only if the item exists -->
+  
+      <div *ngIf="purchaseSuccess" class="success-message">
+        <p>Purchase Successful!</p>
+      </div>
+  
+      <button class="confirm-btn" (click)="confirmPurchase()">Confirm Purchase</button>
+      <button class="cancel-btn" (click)="cancelPurchase()">Cancel</button>
+    </div>
+  </div>
+  

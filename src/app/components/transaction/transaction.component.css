@@ -1,0 +1,81 @@
+/* Full-screen overlay to darken the background */
+.transaction-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;  /* Horizontally center the content */
+    align-items: center;      /* Vertically center the content */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it's on top of other elements */
+    padding: 20px;  /* Some padding for responsiveness */
+  }
+  
+  /* Inner modal box that contains the content and buttons */
+  .transaction-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;  /* Max width for the box */
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  /* Transaction Title */
+  .transaction-container h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Transaction Item Details */
+  .transaction-item h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .transaction-item p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Buttons container styling */
+  .confirm-btn, .cancel-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  /* Confirm button style */
+  .confirm-btn {
+    background-color: #4caf50; /* Green for Confirm */
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .confirm-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Cancel button style */
+  .cancel-btn {
+    background-color: #f44336; /* Red for Cancel */
+    color: white;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #e53935;
+  }
+  
