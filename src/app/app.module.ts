@@ -11,6 +11,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 // Import Services
 import { TransactionService } from './components/shared/transaction.service';
+import { PurchaseSuccessComponent } from './components/purchaseSuccess/purchase-success.component';
 
 @NgModule({
   imports: [
@@ -18,8 +19,10 @@ import { TransactionService } from './components/shared/transaction.service';
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
-    TransactionComponent,  // Importing TransactionComponent
-    DashboardComponent,  // Importing DashboardComponent
+    TransactionComponent,
+    PurchaseSuccessComponent,  // Importing TransactionComponent
+    DashboardComponent,
+    
   ],
   providers: [
     // Provide services used in this module

@@ -26,4 +26,18 @@ header {
   nav a:hover {
     text-decoration: underline;
   }
+  button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  button:hover {
+    background-color: #cc0000;
+  }
+  
   

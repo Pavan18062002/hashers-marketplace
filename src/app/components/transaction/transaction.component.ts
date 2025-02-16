@@ -12,19 +12,18 @@ interface Item {
 }
 
 interface NavigationState {
-  item: Item;
+  item: Item; // item is an object of type Item
 }
 
 @Component({
   selector: 'app-transaction',
   templateUrl: './transaction.component.html',
-  styleUrls: ['./transaction.component.css'],
+  styleUrls: ['./transaction.component.css']
 })
 export class TransactionComponent implements OnInit {
   item: Item | null = null;
   loading: boolean = false;
   error: string | null = null;
-  purchaseSuccess: boolean = false;
 
   constructor(
     private router: Router,
@@ -34,32 +33,37 @@ export class TransactionComponent implements OnInit {
   ngOnInit(): void {
     const navigation = this.router.getCurrentNavigation();
     const state = navigation?.extras.state as NavigationState;
-
     if (state?.item) {
       this.item = state.item;
     } else {
       this.error = 'Item not found. Redirecting to dashboard...';
       setTimeout(() => {
         this.router.navigate(['/dashboard']);
-      }, 30000); // Redirect after 3 seconds
+      }, 50000); 
     }
   }
 
-  async confirmPurchase() {
-    if (this.item) {
-      this.loading = true;
-      this.error = null;
-
-      try {
-        await this.transactionService.purchaseItem(this.item);
-        this.purchaseSuccess = true; // Show success message
-      } catch (err) {
-        this.error = 'Purchase failed. Please try again later.';
-      } finally {
-        this.loading = false;
-      }
-    }
+  confirmPurchase() {
+    // Directly navigate to purchase-success page without checking for item
+    this.router.navigate(['/purchase-success']);
   }
+
+//   async confirmPurchase() {
+//     if (this.item) {
+//       this.loading = true;
+//       try {
+//         // Assuming purchaseItem might be an async operation
+//         await this.transactionService.purchaseItem(this.item);
+
+//         // Navigate to purchase success page
+//         this.router.navigate(['/purchase-success']); // Navigate to the success page
+//       } catch (err) {
+//         this.error = 'Purchase failed. Please try again later.';
+//       } finally {
+//         this.loading = false;
+//       }
+//     }
+//   }
 
   cancelPurchase() {
     this.router.navigate(['/dashboard']);

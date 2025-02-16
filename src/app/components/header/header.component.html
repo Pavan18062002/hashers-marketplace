@@ -1,9 +1,10 @@
 <header>
-    <h1>Hashers-MarketPlace</h1>
-    <nav>
-      <!-- <a routerLink="/dashboard">Dashboard</a> -->
-      <a routerLink="/login">Login</a>
-      <a routerLink="/register">Register</a>
-    </nav>
-  </header>
+  <h1>Hashers-MarketPlace</h1>
+  <nav>
+    <a routerLink="/login" *ngIf="!isLoggedIn">Login</a>
+    <a routerLink="/register" *ngIf="!isLoggedIn">Register</a>
+    <a href="#" (click)="logout()" *ngIf="isLoggedIn">Logout</a>
+  </nav>
+</header>
+
   

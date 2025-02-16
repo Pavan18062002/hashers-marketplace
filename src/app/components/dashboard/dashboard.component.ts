@@ -77,12 +77,12 @@ export class DashboardComponent {
   // Mark item as purchased
   buyItem(index: number) {
     const item = this.items[index];
-    item.isPurchased = false;
+    item.isPurchased = false;  // Initially marking the item as not purchased
     (localStorage as CustomStorage).setItem('items', JSON.stringify(this.items));
-
+  
     // Navigate to the TransactionComponent and pass the selected item
     this.router.navigate(['/transaction'], {
-      state: { item: item } 
+      state: { item: item }  // Passing item to the TransactionComponent via state
     });
   }
 
