@@ -1,0 +1,18 @@
+<div>
+    <h2>Add Item</h2>
+    
+    <label for="name">Item Name</label>
+    <input type="text" id="name" [(ngModel)]="newItem.name" placeholder="Enter item name" />
+  
+    <!-- <label for="description">Description</label>
+    <textarea id="description" [(ngModel)]="newItem.description" placeholder="Enter item description"></textarea> -->
+  
+    <label for="price">Price</label>
+    <input type="number" id="price" [(ngModel)]="newItem.price" placeholder="Enter price" />
+  
+    <label for="image">Image URL</label>
+    <input type="text" id="image" [(ngModel)]="newItem.image" placeholder="Enter image URL" />
+  
+    <button (click)="addItem()">Add Item</button>
+  </div>
+  

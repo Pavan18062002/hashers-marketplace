@@ -1,0 +1,26 @@
+<h2>Hashers-Market Place</h2>
+<h3>Register</h3>
+
+<form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+  <!-- Email -->
+   <h2>Register</h2>
+  <input type="email" name="email" [(ngModel)]="email" placeholder="Email" required 
+    pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    #emailRef="ngModel" />
+  <p class="error" *ngIf="emailRef.invalid && emailRef.touched">
+    Enter a valid email address
+  </p>
+
+  <!-- Password -->
+  <input type="password" name="password" [(ngModel)]="password" placeholder="Password" required minlength="6" #passwordRef="ngModel" />
+  <p class="error" *ngIf="passwordRef.invalid && passwordRef.touched">
+    Password must be at least 6 characters
+  </p>
+
+  <button type="submit" [disabled]="registerForm.invalid">Register</button>
+
+  <!-- ✅ Success Message -->
+  <p class="success" *ngIf="message">{{ message }}</p>
+</form>
+
+<a routerLink="/login">Already have an account? Login</a>

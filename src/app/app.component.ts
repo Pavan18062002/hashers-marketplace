@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [RouterModule, HeaderComponent, FooterComponent, DashboardComponent] // ✅ Import RouterModule for <router-outlet> to work
 })
-export class AppComponent {
-  title = 'hashers-marketplace';
-}
+export class AppComponent {}

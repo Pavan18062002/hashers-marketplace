@@ -1,0 +1,82 @@
+/* Full Screen Dashboard */
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    background-color: #f8f9fa;
+    margin-top: 80px;
+}
+
+/* Move Add Item to Left */
+.add-item-section {
+    flex: 1;
+    margin-right: auto;
+}
+.edit-item-section {
+    display: block; /* Ensure it's visible */
+  }
+
+/* Show Edit Item only when an item is selected */
+.edit-item-section {
+    flex: 1;
+    display: none; /* Hide by default */
+}
+
+.edit-item-section.active {
+    display: block; /* Show when an item is selected */
+}
+
+/* Right section for the item list */
+.item-list-section {
+    flex: 1;
+}
+
+/* General section styling */
+.dashboard-section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: 80vh;
+    margin-top: 20px;
+}
+
+h3 {
+    margin-top: 0; /* ✅ Removes extra space above title */
+    padding-top: 10px; /* ✅ Ensures space below header */
+    text-align: center;
+}
+
+/* Buttons Styling */
+button {
+    padding: 5px 10px; /* Smaller padding */
+    font-size: 12px; /* Smaller font size */
+    margin: 5px; /* Space between buttons */
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+  }
+
+.edit-btn {
+    background-color: #ffc107;
+    color: black;
+    width: 50px;
+}
+.buy-btn{
+    width: 50px;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    width: 50px;
+}
+
+.logout-btn {
+    background-color: #007bff;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+}

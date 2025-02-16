@@ -4,6 +4,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
+    "lib": ["es2015", "dom"],
     "types": [
       "jasmine"
     ]

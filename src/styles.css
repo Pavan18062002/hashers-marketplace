@@ -1,1 +1,107 @@
 /* You can add global styles to this file, and also import other style files */
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Body Styling */
+  body {
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+  
+  /* Form Container */
+  form {
+    background: #fff;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* Input Fields */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Buttons */
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2281c0;
+    border: 1px solid rgb(70, 9, 9); 
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #1cc42a;
+  }
+  
+  /* Error & Success Messages */
+  p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  p.error {
+    color: red;
+  }
+  
+  p.success {
+    color: green;
+  }
+  
+  /* Navigation Links */
+  a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    background-color: #f4f4f4; /* Light background */
+  }
+  
+  app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+   main {
+    flex: 1; /* Push footer to the bottom */
+     padding: 50px;
+  }
