@@ -46,8 +46,11 @@ export class DashboardComponent {
   }
 
   editItem(index: number) {
-    this.selectedIndex = index;
-    this.selectedItem = { ...this.items[index] };
+    this.selectedItem = this.items[index];
+    console.log("Selected item for editing:", this.selectedItem)
+    this.router.navigate(['/edit-item'], {
+      state: { item: this.selectedItem },
+    });
   }
 
   updateItem(updatedItem: any) {

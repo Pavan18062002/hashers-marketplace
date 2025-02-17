@@ -1,11 +1,5 @@
-import {
-  Component,
-  Input,
-  Output,
-  EventEmitter,
-  OnChanges,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -16,20 +10,26 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './edit-item.component.html',
   styleUrls: ['./edit-item.component.css'],
 })
-export class EditItemComponent implements OnChanges {
-  @Input() item: any = null; // Input for receiving the item from the parent
-
-  @Output() updatedItem = new EventEmitter<any>(); // Output for emitting the updated item
-
+export class EditItemComponent implements OnInit {
+  item: any = null;
+  @Input() currentItem: any = null; // Input for receiving the item from the parent
+  @Output() updatedItem = new EventEmitter<any>();
   editedItem: any = {};
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['item'] && changes['item'].currentValue) {
-      this.editedItem = { ...changes['item'].currentValue };
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    const navigation = this.router.getCurrentNavigation();
+    console.log('Navigation object:', navigation);
+    if (navigation?.extras.state?.['item']) { 
+      this.item = navigation.extras.state['item']; // Use bracket notation to access 'item'
+      this.editedItem = { ...this.item }; // Initialize the editedItem with the current item
+      console.log('Item received for editing:', this.editedItem); // Debugging log
+    } else {
+      console.log('No item data received. Check navigation state.');
     }
   }
 
-  // Function to update the item and send it back to the parent
   updateItem() {
     if (this.editedItem) {
       this.updatedItem.emit(this.editedItem); // Emit the updated item

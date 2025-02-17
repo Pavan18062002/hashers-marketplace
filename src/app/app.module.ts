@@ -12,6 +12,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 // Import Services
 import { TransactionService } from './components/shared/transaction.service';
 import { PurchaseSuccessComponent } from './components/purchaseSuccess/purchase-success.component';
+import { EditItemComponent } from './components/edit-item/edit-item.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { PurchaseSuccessComponent } from './components/purchaseSuccess/purchase-
     TransactionComponent,
     PurchaseSuccessComponent,  // Importing TransactionComponent
     DashboardComponent,
+    EditItemComponent,
     
   ],
   providers: [

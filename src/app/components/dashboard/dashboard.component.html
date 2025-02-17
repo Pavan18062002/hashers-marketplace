@@ -52,16 +52,16 @@
       </ul>
   
       <!-- Logout Button -->
-      <button class="logout-btn" (click)="logout()">Logout</button>
+      <!-- <button class="logout-btn" (click)="logout()">Logout</button> -->
     </div>
   
     <!-- Edit Item Form -->
     <div class="dashboard-section edit-item-section" *ngIf="selectedItem">
       <h3>Edit Item</h3>
       <app-edit-item
-        [item]="selectedItem"
-        (updatedItem)="updateItem($event)"
-      ></app-edit-item>
+      [currentItem]="selectedItem"
+      (updatedItem)="updateItem($event)">>
+    </app-edit-item>
     </div>
   </div>
   

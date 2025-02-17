@@ -4,6 +4,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
 import { PurchaseSuccessComponent } from './components/purchaseSuccess/purchase-success.component';
+import { EditItemComponent } from './components/edit-item/edit-item.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -12,4 +13,5 @@ export const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'transaction', component: TransactionComponent },
   { path: 'purchase-success', component: PurchaseSuccessComponent },
+  { path: 'edit-item', component: EditItemComponent },
 ];

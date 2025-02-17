@@ -1,41 +1,97 @@
-.edit-item-container {
-    width: 100%;
-    max-width: 500px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+/* Ensure full height of the body and no extra space */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  display: flex;
+  justify-content: center; /* Horizontally centers the content */
+  align-items: center; /* Vertically centers the content */
+  background-color: #f4f4f9; /* Subtle background color */
+  overflow: hidden; 
+}
+
+/* Styling for the container that holds the form */
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  max-width: 1000px
+}
+
+/* Form styling */
+form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 100%; /* Increased max-width for more space */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; 
+  overflow-y: auto; 
+  margin: 0 20px; 
+}
+
+/* Label styling */
+label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input field styling */
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Styling for number input to remove spinners */
+/* input[type="number"] {
+  -moz-appearance: textfield;
+} */
+
+/* Focus state for inputs */
+input:focus {
+  border-color: #5cb3fd;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button styling */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 800px) {
+  form {
+    padding: 15px;
   }
-  
-  .edit-item-container h3 {
-    margin-bottom: 15px;
-    color: #333;
+
+  input,
+  button {
+    font-size: 14px;
   }
-  
-  .edit-item-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .edit-item-container button {
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-  }
-  
-  .edit-item-container button:hover {
-    background-color: #0056b3;
-  }
-  
+}
