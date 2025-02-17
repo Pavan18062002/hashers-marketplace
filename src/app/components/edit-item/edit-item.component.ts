@@ -22,9 +22,9 @@ export class EditItemComponent implements OnInit {
     const navigation = this.router.getCurrentNavigation();
     console.log('Navigation object:', navigation);
     if (navigation?.extras.state?.['item']) { 
-      this.item = navigation.extras.state['item']; // Use bracket notation to access 'item'
-      this.editedItem = { ...this.item }; // Initialize the editedItem with the current item
-      console.log('Item received for editing:', this.editedItem); // Debugging log
+      this.item = navigation.extras.state['item']; 
+      this.editedItem = { ...this.item }; 
+      console.log('Item received for editing:', this.editedItem); 
     } else {
       console.log('No item data received. Check navigation state.');
     }
